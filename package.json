@@ -1,6 +1,6 @@
 {
     "name": "hexo-algoliasearch-next",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A plugin to index posts of your Hexo blog on Algolia",
     "main": "index.js",
     "scripts": {
@@ -16,7 +16,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/LouisBarranqueiro/hexo-algolia.git"
+        "url": "git+https://github.com/Becavalier/hexo-algoliasearch-next.git"
     },
     "keywords": [
         "hexo",
@@ -28,9 +28,9 @@
     "author": "Louis Barranqueiro",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/LouisBarranqueiro/hexo-algoliasearch/issues"
+        "url": "https://github.com/Becavalier/hexo-algoliasearch-next/issues"
     },
-    "homepage": "https://github.com/LouisBarranqueiro/hexo-algoliasearch#readme",
+    "homepage": "https://github.com/Becavalier/hexo-algoliasearch-next#readme",
     "dependencies": {
         "algoliasearch": "4.19.1",
         "striptags": "3.2.0"

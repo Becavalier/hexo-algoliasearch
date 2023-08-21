@@ -4,6 +4,12 @@
 
 A plugin to index posts of your Hexo blog on Algolia
 
+
+## Changelog
+
+* Support splitting blog content into smaller records, by paragraph.
+
+
 ## Installation
 
 ```
