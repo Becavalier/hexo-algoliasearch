@@ -62,7 +62,7 @@ export const splitIntoChunks = (array, chunkSize) => {
 export const preparePosts = (posts, fields, fieldsWithFilters) => {
   const tagsAndCategoriesFields = ['tags', 'categories'].filter((field) => fields.includes(field))
 
-  return posts.map((initialPost) => {
+  const processedPosts = posts.map((initialPost) => {
     const postToIndex = pick(initialPost, fields)
     // define a unique ID to identfy this post on Algolia
     postToIndex.objectID = initialPost._id
@@ -104,6 +104,26 @@ export const preparePosts = (posts, fields, fieldsWithFilters) => {
 
     return postToIndex
   })
+
+  return processedPosts.reduce((prev, curr) => {
+    const content = curr?.content ?? curr?.contentStrip ?? curr?.contentStripTruncate
+    const splits = content.split('\n').filter(i => i.trim().length > 0)
+    if (splits.length > 0) {
+      prev = prev.concat(splits.map((j, idx) => {
+        delete curr.contentStrip
+        delete curr.contentStripTruncate
+        return {
+          ...curr,
+          objectID: `${curr.objectID}-${idx}`,
+          content: j,
+        }
+      }))
+    }
+ else {
+      prev.push(curr)
+    }
+    return prev
+  }, [])
 }
 
 
@@ -147,6 +167,10 @@ const algoliaCommand = async(hexo, args, callback) => {
   const chunkedPosts = splitIntoChunks(posts, algoliaChunkSize)
   const algoliaClient = algoliasearch(algoliaAppId, algoliaAdminApiKey)
   const algoliaIndex = algoliaClient.initIndex(algoliaIndexName)
+  await algoliaIndex.setSettings({
+    attributeForDistinct: 'title',
+    distinct: true
+  })
 
   if (args && !args.n) {
     hexo.log.info('Clearing index on Algolia...')

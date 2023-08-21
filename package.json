@@ -1,5 +1,5 @@
 {
-    "name": "hexo-algoliasearch",
+    "name": "hexo-algoliasearch-next",
     "version": "1.0.0",
     "description": "A plugin to index posts of your Hexo blog on Algolia",
     "main": "index.js",
