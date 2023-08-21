@@ -1,6 +1,4 @@
-# hexo-algoliasearch
-[![coveralls status](https://img.shields.io/coveralls/LouisBarranqueiro/hexo-algoliasearch.svg?style=flat-square)](https://coveralls.io/github/LouisBarranqueiro/hexo-algoliasearch)
-[![gitter chat](https://img.shields.io/gitter/room/LouisBarranqueiro/hexo-algoliasearch.svg?style=flat-square)](https://gitter.im/LouisBarranqueiro/hexo-algoliasearch)
+# hexo-algoliasearch-next
 
 A plugin to index posts of your Hexo blog on Algolia
 
@@ -13,7 +11,7 @@ A plugin to index posts of your Hexo blog on Algolia
 ## Installation
 
 ```
-npm install hexo-algoliasearch --save
+npm install hexo-algoliasearch-next --save
 ```
 
 If Hexo detect automatically all plugins, that's all.
@@ -21,7 +19,7 @@ If Hexo detect automatically all plugins, that's all.
 If that is not the case, register the plugin in your `_config.yml` file :
 ```yml
 plugins:
-  - hexo-algoliasearch
+  - hexo-algoliasearch-next
 ```
 
 ## Configuration
@@ -94,4 +92,4 @@ hexo algolia
 
 # Licence
 
-hexo-algoliasearch is under [MIT](https://github.com/LouisBarranqueiro/hexo-algoliasearch/blob/master/LICENSE)
+MIT.
