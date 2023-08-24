@@ -3,9 +3,10 @@
 A plugin to index posts of your Hexo blog on Algolia
 
 
-## Changelog
-
-* Support splitting blog content into smaller records, by paragraph.
+## Changelog 
+Comparing to *hexo-algoliasearch*:
+- [x] Support splitting blog content into smaller records by paragraph (\n).
+- [x] Support de-duplication or grouping of results on a given field.
 
 
 ## Installation

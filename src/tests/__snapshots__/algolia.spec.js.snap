@@ -5,8 +5,7 @@ exports[`algolia algoliaCommand() should clear index and index posts on Algolia 
   [
     [
       {
-        "contentStripTruncate": "This is the content of the post 1
-",
+        "content": "This is the content of the post 1",
         "excerptStrip": "",
         "objectID": 0,
         "permalink": "http://localhost:4000/2019/01/01/first-post/",
@@ -16,8 +15,7 @@ exports[`algolia algoliaCommand() should clear index and index posts on Algolia 
         "title": "Post 1",
       },
       {
-        "contentStripTruncate": "This is the content of the post 2
-",
+        "content": "This is the content of the post 2",
         "excerptStrip": "",
         "objectID": 1,
         "permalink": "http://localhost:4000/2019/02/01/second-post/",
@@ -34,8 +32,7 @@ exports[`algolia algoliaCommand() should clear index and index posts on Algolia 
 exports[`algolia algoliaCommand() should clear index and index posts on Algolia (environment variables) 1`] = `
 [
   {
-    "contentStripTruncate": "This is the content of the post 1
-",
+    "content": "This is the content of the post 1",
     "excerptStrip": "",
     "objectID": 0,
     "permalink": "http://localhost:4000/2019/01/01/first-post/",
@@ -45,8 +42,7 @@ exports[`algolia algoliaCommand() should clear index and index posts on Algolia 
     "title": "Post 1",
   },
   {
-    "contentStripTruncate": "This is the content of the post 2
-",
+    "content": "This is the content of the post 2",
     "excerptStrip": "",
     "objectID": 1,
     "permalink": "http://localhost:4000/2019/02/01/second-post/",
@@ -63,8 +59,7 @@ exports[`algolia algoliaCommand() should not clear index and index posts on Algo
   [
     [
       {
-        "contentStripTruncate": "This is the content of the post 1
-",
+        "content": "This is the content of the post 1",
         "excerptStrip": "",
         "objectID": 0,
         "permalink": "http://localhost:4000/2019/01/01/first-post/",
@@ -74,8 +69,7 @@ exports[`algolia algoliaCommand() should not clear index and index posts on Algo
         "title": "Post 1",
       },
       {
-        "contentStripTruncate": "This is the content of the post 2
-",
+        "content": "This is the content of the post 2",
         "excerptStrip": "",
         "objectID": 1,
         "permalink": "http://localhost:4000/2019/02/01/second-post/",
@@ -94,8 +88,7 @@ exports[`algolia algoliaCommand() should use the specified chunk size to index p
   [
     [
       {
-        "contentStripTruncate": "This is the content of the post 1
-",
+        "content": "This is the content of the post 1",
         "excerptStrip": "",
         "objectID": 0,
         "permalink": "http://localhost:4000/2019/01/01/first-post/",
@@ -109,8 +102,7 @@ exports[`algolia algoliaCommand() should use the specified chunk size to index p
   [
     [
       {
-        "contentStripTruncate": "This is the content of the post 2
-",
+        "content": "This is the content of the post 2",
         "excerptStrip": "",
         "objectID": 1,
         "permalink": "http://localhost:4000/2019/02/01/second-post/",
@@ -128,17 +120,17 @@ exports[`algolia preparePosts() should return a list of posts with only their ti
 [
   {
     "content": "<span>the content of the <strong>post</strong></span>",
-    "objectID": 1,
+    "objectID": "1-0",
     "title": "the title of the post",
   },
   {
     "content": "<span>the content of the <strong>post</strong></span>",
-    "objectID": 2,
+    "objectID": "2-0",
     "title": "the title of the post",
   },
   {
     "content": "<span>the content of the <strong>post</strong></span>",
-    "objectID": 3,
+    "objectID": "3-0",
     "title": "the title of the post",
   },
 ]
@@ -156,20 +148,20 @@ exports[`algolia preparePosts() should return a list of posts with the specified
 exports[`algolia preparePosts() should return a list of posts with the specified fields with filters 1`] = `
 [
   {
-    "contentStripTruncate": "the c",
-    "objectID": 1,
+    "content": "the c",
+    "objectID": "1-0",
     "title": "the title of the post",
     "titleTruncate": "itle of th",
   },
   {
-    "contentStripTruncate": "the c",
-    "objectID": 2,
+    "content": "the c",
+    "objectID": "2-0",
     "title": "the title of the post",
     "titleTruncate": "itle of th",
   },
   {
-    "contentStripTruncate": "the c",
-    "objectID": 3,
+    "content": "the c",
+    "objectID": "3-0",
     "title": "the title of the post",
     "titleTruncate": "itle of th",
   },
@@ -184,8 +176,8 @@ exports[`algolia preparePosts() should return a list of posts with the specified
       "category-2",
       "category-3",
     ],
-    "contentStripTruncate": "the c",
-    "objectID": 1,
+    "content": "the c",
+    "objectID": "1-0",
     "tags": [
       "tag-1",
       "tag-2",
@@ -200,8 +192,8 @@ exports[`algolia preparePosts() should return a list of posts with the specified
       "category-2",
       "category-3",
     ],
-    "contentStripTruncate": "the c",
-    "objectID": 2,
+    "content": "the c",
+    "objectID": "2-0",
     "tags": [
       "tag-1",
       "tag-2",
@@ -216,8 +208,8 @@ exports[`algolia preparePosts() should return a list of posts with the specified
       "category-2",
       "category-3",
     ],
-    "contentStripTruncate": "the c",
-    "objectID": 3,
+    "content": "the c",
+    "objectID": "3-0",
     "tags": [
       "tag-1",
       "tag-2",
@@ -237,8 +229,8 @@ exports[`algolia preparePosts() should return a list of posts with the specified
       "category-2",
       "category-3",
     ],
-    "contentStripTruncate": "the c",
-    "objectID": 1,
+    "content": "the c",
+    "objectID": "1-0",
     "tags": [
       "tag-1",
       "tag-2",
@@ -253,8 +245,8 @@ exports[`algolia preparePosts() should return a list of posts with the specified
       "category-2",
       "category-3",
     ],
-    "contentStripTruncate": "the c",
-    "objectID": 2,
+    "content": "the c",
+    "objectID": "2-0",
     "tags": [
       "tag-1",
       "tag-2",
@@ -269,8 +261,8 @@ exports[`algolia preparePosts() should return a list of posts with the specified
       "category-2",
       "category-3",
     ],
-    "contentStripTruncate": "the c",
-    "objectID": 3,
+    "content": "the c",
+    "objectID": "3-0",
     "tags": [
       "tag-1",
       "tag-2",

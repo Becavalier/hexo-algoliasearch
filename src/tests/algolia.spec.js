@@ -12,7 +12,8 @@ import algoliasearch, {mocks as algoliasearchMocks} from 'algoliasearch'
 jest.mock('algoliasearch', () => {
   const algoliaIndex = {
     clearObjects: jest.fn(() => Promise.resolve()),
-    saveObjects: jest.fn(() => Promise.resolve())
+    saveObjects: jest.fn(() => Promise.resolve()),
+    setSettings: jest.fn(() => Promise.resolve())
   }
   const algoliaClient = {
     initIndex: jest.fn(() => algoliaIndex)

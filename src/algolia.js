@@ -106,7 +106,7 @@ export const preparePosts = (posts, fields, fieldsWithFilters) => {
   })
 
   return processedPosts.reduce((prev, curr) => {
-    const content = curr?.content ?? curr?.contentStrip ?? curr?.contentStripTruncate
+    const content = curr?.content ?? curr?.contentStrip ?? curr?.contentStripTruncate ?? ''
     const splits = content.split('\n').filter(i => i.trim().length > 0)
     if (splits.length > 0) {
       prev = prev.concat(splits.map((j, idx) => {
@@ -152,6 +152,7 @@ const algoliaCommand = async(hexo, args, callback) => {
   const algoliaIndexName = process.env.ALGOLIA_INDEX_NAME || algoliaConfig.indexName
   // Algolia recommendation: split posts into chunks of 5000 to get a good indexing/insert performance
   const algoliaChunkSize = algoliaConfig.chunkSize || 5000
+  const attributeForDistinct = algoliaConfig.attributeForDistinct
 
   await hexo.call('generate')
   await hexo.database.load()
@@ -167,10 +168,12 @@ const algoliaCommand = async(hexo, args, callback) => {
   const chunkedPosts = splitIntoChunks(posts, algoliaChunkSize)
   const algoliaClient = algoliasearch(algoliaAppId, algoliaAdminApiKey)
   const algoliaIndex = algoliaClient.initIndex(algoliaIndexName)
-  await algoliaIndex.setSettings({
-    attributeForDistinct: 'title',
-    distinct: true
-  })
+  if (attributeForDistinct) {
+    await algoliaIndex.setSettings({
+      attributeForDistinct,
+      distinct: true
+    })
+  }
 
   if (args && !args.n) {
     hexo.log.info('Clearing index on Algolia...')
